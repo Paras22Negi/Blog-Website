@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/uploads' ,express.static(path.join(__dirname, 'uploads')));
 
 
-app.use(cors({origin: 'http://localhost:5173',
+app.use(cors({origin: process.env.FRONTEND_URL,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
