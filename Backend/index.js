@@ -14,6 +14,7 @@ app.use('/api/uploads' ,express.static(path.join(__dirname, 'uploads')));
 
 
 app.use(cors({origin: process.env.FRONTEND_URL,
+    credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
