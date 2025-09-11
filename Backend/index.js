@@ -6,6 +6,11 @@ const Port = process.env.PORT;
 const path = require('path');
 const mainRoutes = require('./Routes/mainRoutes');
 
+app.use(cors({origin: process.env.FRONTEND_URL,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 
 app.use(express.json());
@@ -13,11 +18,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/uploads' ,express.static(path.join(__dirname, 'uploads')));
 
 
-app.use(cors({origin: process.env.FRONTEND_URL,
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-}));
 
 app.use('/api', mainRoutes)
 
