@@ -30,10 +30,10 @@ mongoose
       required: true,
       minlength: [8, "minimum 8 characters required"],
       maxlength: [100, "maximum 100 characters allowed"],
-      // match: [
-      //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/,
-      //   "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
-      // ],
+      match: [
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/,
+        "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
+      ],
     },
     blog: [
       {
